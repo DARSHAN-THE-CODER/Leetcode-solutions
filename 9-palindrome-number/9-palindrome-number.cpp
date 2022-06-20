@@ -4,9 +4,10 @@ public:
         
         long long r_num=0;
         long long num=abs(x);
-        if(x>INT_MAX || x<INT_MIN || abs(x)!=x)
+        if(x>INT_MAX || x<INT_MIN)
             return false;
-       
+        if(abs(x)!=x)
+            return false;
         while(num!=0)
         {
             long long digit=num%10;
