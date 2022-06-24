@@ -5,7 +5,6 @@ public:
         long long int sum=1;
         while(sum<=n)
         {
-            cout<<sum<<endl;
             sum=sum*4;
             if(sum==n)
             {
