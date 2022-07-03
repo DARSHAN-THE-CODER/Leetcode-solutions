@@ -4,9 +4,9 @@ public:
         int diff=0;
         sort(nums.begin(),nums.end());
         int median=nums[nums.size()/2];
-        for(auto i:nums)
+        for(int i=0;i<nums.size();i++)
         {
-            diff=diff+abs(i-median);
+            diff=diff+abs(nums[i]-median);
         }
         return diff;
     }
