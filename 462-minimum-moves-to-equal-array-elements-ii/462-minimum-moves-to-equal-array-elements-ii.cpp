@@ -6,7 +6,7 @@ public:
         int median=nums[nums.size()/2];
         for(auto i:nums)
         {
-            diff+=abs(i-median);
+            diff=diff+abs(i-median);
         }
         return diff;
     }
