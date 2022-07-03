@@ -10,11 +10,10 @@ public:
         for(auto i:costs)
         {
             if(i<=coins)
-            {
                 ice=ice+1;
-                coins=coins-i;
-            }
-            
+            else
+                return ice;
+            coins=coins-i;
         }
         return ice;
     }
