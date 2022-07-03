@@ -6,15 +6,9 @@ public:
         
         for(int i=1;i<nums.size();i++)
         {
-            if(nums[i]<nums[i-1])
-            {
-                v=p+1;
-            }
+            nums[i]<nums[i-1] ? v=p+1 : ' ' ;
 
-            if(nums[i]>nums[i-1])
-            {
-                p=v+1;
-            }
+            nums[i]>nums[i-1] ? p=v+1 : ' ';        
         }
         return max(p,v);
     }
