@@ -1,49 +1,20 @@
 class Solution {
 public:
     vector<int> searchRange(vector<int>& nums, int target) {
-        vector<int> range;
-        if(nums.size()==1)
+        vector<int> arr;
+        int n = lower_bound(nums.begin(), nums.end(), target) - nums.begin();
+        int m = upper_bound(nums.begin(), nums.end(), target) - nums.begin();
+
+        int x = binary_search(nums.begin(), nums.end(), target);
+        if(x)
         {
-            if(nums[0]==target)
-            {
-                range.push_back(0);
-                range.push_back(0);
-                return range;
-            }
-            else{
-                range.push_back(-1);
-                range.push_back(-1);
-                return range;
-            }
+            arr.push_back(n);
+            arr.push_back(m-1);
         }
-        for(int i=0;i<nums.size();i++)
-        {        
-            
-            if(nums[i]==target)
-            {
-                if(range.size()==0)
-                    range.push_back(i);
-                if(i==nums.size()-1)
-                {
-                    range.push_back(i);
-                }
-                else{
-                    if(nums[i+1]!=target)
-                        range.push_back(i);
-                }
-            }
+        else{
+            arr.push_back(-1);
+            arr.push_back(-1);
         }
-        
-        if(range.size()==1)
-        {
-            range.push_back(range[0]);
-        }
-        if(range.size()==0)
-        {
-            range.push_back(-1);
-            range.push_back(-1);
-            return range;
-        }
-        return range;
+        return arr;
     }
 };
