@@ -19,6 +19,6 @@ public:
 
         vector<vector<vector<int>>> dp(n+1, vector<vector<int>>(2, vector<int>(n, -1)));
 
-        return helper(0, 1, n-1, dp, prices);
+        return helper(0, 1, (n)/2, dp, prices);
     }
 };
