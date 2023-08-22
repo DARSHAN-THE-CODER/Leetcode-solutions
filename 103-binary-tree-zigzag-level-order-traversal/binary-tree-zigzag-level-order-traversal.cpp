@@ -21,24 +21,20 @@ public:
 
         while(!q.empty()){
             int size = q.size();
-            vector<int> temp;
+            vector<int> temp(size);
             for(int i=0;i<size;i++){
                 TreeNode* node = q.front();
                 q.pop();
+                int index = flag == 0 ? i : size-i-1;
+                temp[index] = node->val;
                 if(node->left){
                     q.push(node->left);
                 } 
                 if(node->right){
                     q.push(node->right);
                 } 
-                temp.push_back(node->val);
             }
-            if(flag == 0) ans.push_back(temp);
-            else {
-                reverse(temp.begin(), temp.end());
-                ans.push_back(temp);
-            }
-
+            ans.push_back(temp);
             flag = !flag;
         }
         return ans;
