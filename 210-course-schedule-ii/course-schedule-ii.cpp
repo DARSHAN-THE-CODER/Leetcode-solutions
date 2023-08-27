@@ -6,6 +6,7 @@ public:
         for(auto it: prerequisites){
             adj[it[1]].push_back(it[0]);
         }
+
         vector<int> indegree(numCourses,0);
 
         for(int i=0;i<numCourses;i++){
@@ -24,8 +25,9 @@ public:
         vector<int> ans;
         while(!q.empty()){
             int node = q.front();
-            q.pop();
             ans.push_back(node);
+            q.pop();
+
             for(auto it: adj[node]){
                 indegree[it]--;
                 if(indegree[it] == 0){
@@ -35,6 +37,6 @@ public:
         }
 
         if(ans.size() == numCourses) return ans;
-        else return {};
+        return {};
     }
 };
