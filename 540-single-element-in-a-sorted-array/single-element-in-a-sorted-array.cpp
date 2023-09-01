@@ -10,6 +10,7 @@ public:
             if(nums[low]==nums[low+1]) low+=2;
             if(nums[high==nums[high-1]]) high-=2;
         }
-        return nums[low];
+        if(low == high) return nums[low];
+        return -1;
     }
 };
